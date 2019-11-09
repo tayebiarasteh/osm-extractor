@@ -50,37 +50,55 @@ class OSMdata:
             '''Tags related to nodes:'''
             print(
                 '''Nodes\nHere you will see the tags derived from the nodes. Ways and relations in the following.\n\n''')
-            first = tree.findall('node')
+            nodes = tree.findall('node')
+
+            #data extracted
+            results = []
 
             # A list to store all the id's of all desired OSM elements.
-            id_s = list()
-            for item in first:
+            id_s = []
+
+            for item in nodes:
+                #data extracted related to a specific node
+                data = dict()
+
                 distance = self.haversine(self.lon, self.lat, float(item.get('lon')), float(item.get('lat')))
                 if distance <= self.radius:
                     id_s.append(item.get('id'))
-                    second = item.findall('tag')
-                    for item2 in second:
-                        print('KEY:', item2.get('k'), ' | VALUE:', item2.get('v'))
-
+                    elements = item.findall('tag')
+                    for item2 in elements:
+                        # print('KEY:', item2.get('k'), ' | VALUE:', item2.get('v'))
+                        data[item2.get('k')] = item2.get('v')
+                    if len(data):
+                        results.append(data)
                     # Separates tags of each node from the other nodes
-                    if len(second) > 0:
-                        print('---------------------------------------------------------------------------------\n')
+                    # if len(elements) > 0:
+                    #     print('---------------------------------------------------------------------------------\n')
 
             '''Tags related to ways:'''
             print('''Ways\n''')
             # A list to find the repeated id's to avoid printing
-            repeatID = list()
+            repeatID = []
             repeatID.append('a')
-            first = tree.findall('way')
-            for item in first:  # Looping through ways
-                wayID = item.get('id')  # The way's id
+            ways = tree.findall('way')
+
+            # Looping through ways
+            for item in ways:
+                # The ways' id's
+                wayID = item.get('id')
+
                 second = item.findall('nd')
                 if all(t != wayID for t in repeatID):
                     for item2 in second:  # Looping through nd's
                         third = item2.get('ref')
-                        if any(i == third for i in id_s):  # Looping through our id list from before
-                            id_s.append(wayID)  # Add the way id to our id list
-                            repeatID.append(wayID)  # So that we don't print it anymore
+
+                        # Looping through our id list from before
+                        if any(i == third for i in id_s):
+
+                            # Add the way id to our id list so that we don't print it anymore.
+                            id_s.append(wayID)
+                            repeatID.append(wayID)
+
                             fourth = item.findall('tag')
                             for item3 in fourth:
                                 print('KEY:', item3.get('k'), ' | VALUE:', item3.get('v'))
@@ -118,4 +136,11 @@ class OSMdata:
                                         '---------------------------------------------------------------------------\n')
                                 break
 
+
+        # for node in results:
+        #     for key in node:
+        #         print(key + ':', node[key])
+        #
+        #     # Separates tags of each node from the other nodes
+        #     print('---------------------------------------------------------------------------------\n')
 
