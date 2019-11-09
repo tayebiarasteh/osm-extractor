@@ -73,14 +73,14 @@ class OSMdata:
             repeatID.append('a')
             first = tree.findall('way')
             for item in first:  # Looping through ways
-                wayid = item.get('id')  # The way's id
+                wayID = item.get('id')  # The way's id
                 second = item.findall('nd')
-                if all(t != wayid for t in repeatID):
+                if all(t != wayID for t in repeatID):
                     for item2 in second:  # Looping through nd's
                         third = item2.get('ref')
                         if any(i == third for i in id_s):  # Looping through our id list from before
-                            id_s.append(wayid)  # Add the way id to our id list
-                            repeatID.append(wayid)  # So that we don't print it anymore
+                            id_s.append(wayID)  # Add the way id to our id list
+                            repeatID.append(wayID)  # So that we don't print it anymore
                             fourth = item.findall('tag')
                             for item3 in fourth:
                                 print('KEY:', item3.get('k'), ' | VALUE:', item3.get('v'))
@@ -99,15 +99,15 @@ class OSMdata:
             repeatID.append('a')
             first = tree.findall('relation')
             for item in first:
-                relationid = item.get('id')  # The relation's id
+                relationID = item.get('id')  # The relation's id
                 second = item.findall('member')
-                if all(t != relationid for t in repeatID):
+                if all(t != relationID for t in repeatID):
                     for item2 in second:  # Looping through member's
                         third = item2.get('ref')
                         for i in id_s:  # Looping through our id list from before
                             if third == i:
-                                id_s.append(relationid)  # Add the relation id to our id list
-                                repeatID.append(relationid)  # So that we don't print it anymore
+                                id_s.append(relationID)  # Add the relation id to our id list
+                                repeatID.append(relationID)  # So that we don't print it anymore
                                 fourth = item.findall('tag')  # The problem is in here!!!
                                 for item3 in fourth:
                                     print('KEY:', item3.get('k'), ' | VALUE:', item3.get('v'))

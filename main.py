@@ -1,5 +1,6 @@
 from OSMdata import OSMdata
 
+'''Just run this file'''
 
 osm_file_n = input('the name of your OSM file, e.g. map.osm: ')
 user_lat = input('Enter your desired latitude, e.g. 49.6048488: ')
