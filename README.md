@@ -1,9 +1,9 @@
-## Extracting necessary information defined by the user from the OpenStreetMap.
+## Extracting necessary information defined by the user from the OpenStreetMap
 
 
 [OpenStreetMap](https://www.openstreetmap.org/) (OSM) is a map of the world, created by people like you and free to use under an open license.
 
-To download the OSM data for a specific region in the world, you can click [here](https://www.openstreetmap.org/export) and then click export. However, if you need to download a map of a area consisting more than 50000 nodes, you should visit their [planet](https://planet.openstreetmap.org/) website.
+To download the OSM data for a specific region in the world, you can click [here](https://www.openstreetmap.org/export) and then click export. However, if you need to download a map of an area consisting more than 50000 nodes, you should visit their [planet](https://planet.openstreetmap.org/) website.
 
 ### Data structure
 The downloaded files will be in the **XML** form and with `.osm` extension. You can refer to `sample_map.osm` as an example.
@@ -14,4 +14,4 @@ Also, OpenStreetMap describes the world with 3 major elements,
 
 ### Goal of this project 
 
-Every single element with its information in a given area will be exreacted, then related elements will be grouped together to identify an object. Doing so, we can recognize every object (of course if it's mentioned in the OpenStreetMap) in any area of the world.
+Every single element with its information in a given area will be exreacted, then related elements will be grouped together to identify an object. Doing so, we can recognize every object (of course if it is mentioned in the OpenStreetMap), with its further information given by people, in any area of the world.
