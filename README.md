@@ -9,7 +9,7 @@ To download the OSM data for a specific region in the world, you can click [here
 The downloaded files will be in the **XML** form and with `.osm` extension. You can refer to `sample_map.osm` as an example, which shows an area in Erlangen, Germany.
 Also, the OpenStreetMap describes the world with 3 major elements,
 1. **Node:** Every node indicates a point in the world.
-2. **Way:** A combination of multiple nodes, which create an open curve, e.g. a highway.
+2. **Way:** A combination of multiple nodes, which creates an open curve, e.g. a highway.
 3. **Relation:** A combination of all the 3 elements, e.g. a building.
 
 ### Goal of this project 
