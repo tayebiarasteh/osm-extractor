@@ -1,3 +1,7 @@
+'''
+@author: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
+https://github.com/starasteh/
+'''
 import xml.etree.ElementTree as ET
 from math import radians, cos, sin, asin, sqrt
 
@@ -5,25 +9,24 @@ from math import radians, cos, sin, asin, sqrt
 class OSMdata:
     '''
     This class extracts all the information from a .osm file in a desired area.
-    You can specify the area by giving the longitude and the latitude of a specific point on the earth
-    and then specify a radius around that point.
+    You can specify the area by giving the longitude and the latitude of a specific
+    point on the earth and then specify a radius around that point.
 
-    This class first of all checks which nodes are in our desired area.
+    Firstly it checks which nodes are in our desired area.
     Then retrieves the tags of these nodes. And finally, retrieves the tags
     of ways created by these nodes and relations created by all the
     nodes, ways, and relations we have so far.
     '''
-
     def __init__(self, lon, lat, radius, osm_file_n):
         self.lat = lat
         self.lon = lon
         self.radius = radius
         self.osm_file_n = osm_file_n
 
-        #data extracted
+        # extracted data
         self.results = []
 
-        # A list to store all the id's of all desired OSM elements.
+        # A list to store all the id's of all the desired OSM elements.
         self.id_s = []
 
         with open(self.osm_file_n) as osm_file:
@@ -56,7 +59,8 @@ class OSMdata:
     def node_extractor(self):
         '''Tags related to nodes:'''
         print(
-            '''Nodes\nHere you will see the tags derived from the nodes. Ways and relations in the following.\n\n''')
+            '''Nodes\nHere you will see the tags derived from the nodes. 
+            Ways and relations in the following.\n\n''')
         nodes = self.tree.findall('node')
         for item in nodes:
             #data extracted related to a specific node
@@ -74,8 +78,10 @@ class OSMdata:
                     self.results.append(data)
                 # Separates tags of each node from the other nodes
                 if len(elements) > 0:
-                    print('---------------------------------------------------------------------------------\n')
+                    print('---------------------------------------'
+                          '------------------------------------------\n')
         return self.results
+
 
     def way_extractor(self):
         '''Tags related to ways:'''
@@ -118,7 +124,8 @@ class OSMdata:
                         # Separates tags of each way from the other ways
                         if len(elements) > 0:
                             print(
-                                '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+                                '+++++++++++++++++++++++++++++++++++++++'
+                                '++++++++++++++++++++++++++++++++++++++++\n')
                         break
         return self.results
 
@@ -155,8 +162,7 @@ class OSMdata:
                             # Separates tags of each relation from the other relations
                             if len(fourth) > 0:
                                 print(
-                                    '---------------------------------------------------------------------------\n')
+                                    '----------------------------------------'
+                                    '-----------------------------------\n')
                             break
         return self.results
-
-
