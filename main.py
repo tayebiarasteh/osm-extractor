@@ -6,27 +6,26 @@ from OSMdata import OSMdata
 
 
 
-def main():
-    osm_file_n = input('the name of your OSM file, e.g. sample_map.osm: ')
-    user_lon = input('Enter your desired longitude, e.g. 11.8764: ')
-    user_lon = float(user_lon)
-    user_lat = input('Enter your desired latitude, e.g. 49.6048488: ')
-    user_lat = float(user_lat)
-    user_radius = input('Enter your desired radius in meters: ')
-    user_radius = float(user_radius)
-
+def main(user_lon=11.8764, user_lat=49.6048488,
+         user_radius=50, osm_file_n='sample_map.osm'):
+    '''
+    :param user_lon: your desired longitude, e.g. 11.8764.
+    :param user_lat: your desired latitude, e.g. 49.6048488.
+    :param user_radius: your desired radius in meters.
+    :param osm_file_n: the name of your OSM file, e.g. "sample_map.osm".
+    :return: A list of dictionaries of extracted information.
+    '''
     osm = OSMdata(user_lon, user_lat, user_radius, osm_file_n)
     osm.node_extractor()
     osm.way_extractor()
     results = osm.rel_extractor()
-
     return results
 
 
 
 
 if __name__ == '__main__':
-    main()
+    results = main(11.8764, 49.6048488, 500, 'sample_map.osm')
 
     # osm = OSMdata(11.0, 49.0, 500.0, 'sample_map.osm')
     # osm.node_extractor()
