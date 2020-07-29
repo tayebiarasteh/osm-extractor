@@ -11,6 +11,9 @@
 
 To download the OSM data for a specific region in the world, you can click [here](https://www.openstreetmap.org/export) and then click export. However, if you need to download a map of an area consisting more than 50000 nodes, you should visit their [planet](https://planet.openstreetmap.org/) website.
 
+Conducted at the [Chair of Information Technology (Communication Electronics)](https://www.like.tf.fau.de/) of the [Electical Engineering Department](https://www.eei.tf.fau.de/) at University of Erlangen-Nuremberg (FAU).
+
+
 ### Data structure
 The downloaded files will be in the **XML** form and with `.osm` extension. You can refer to `sample_map.osm` as an example, which shows an area in Erlangen, Germany.
 
