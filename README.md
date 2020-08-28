@@ -1,6 +1,6 @@
 ## Extracting necessary information defined by the user from the OpenStreetMap
 
-### By Soroosh Tayebi Arasteh
+### By [Soroosh Tayebi Arasteh](https://github.com/starasteh)
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
@@ -11,7 +11,7 @@
 
 To download the OSM data for a specific region in the world, you can click [here](https://www.openstreetmap.org/export) and then click export. However, if you need to download a map of an area consisting more than 50000 nodes, you should visit their [planet](https://planet.openstreetmap.org/) website.
 
-Conducted at the [Chair of Information Technology (Communication Electronics)](https://www.like.tf.fau.de/) of the [Electical Engineering Department](https://www.eei.tf.fau.de/) at University of Erlangen-Nuremberg (FAU).
+Conducted at the [Chair of Information Technology (Communication Electronics), Navigation and Localization group, Prof. Dr.-Ing. Jörn Thielecke](https://www.like.tf.fau.de/) of the [Electical Engineering Department](https://www.eei.tf.fau.de/) at [University of Erlangen-Nuremberg (FAU)](https://www.fau.eu/).
 
 
 ### Data structure
@@ -22,10 +22,10 @@ Also, the OpenStreetMap describes the world with 3 major elements,
 2. **Way:** A combination of multiple nodes, which creates an open curve, e.g. a highway.
 3. **Relation:** A combination of all the 3 elements, e.g. a building.
 
-### Goal of this project 
+### Goal of this mini project 
 
 Every single element with its information in a given area will be extracted. Then related elements will be grouped together to identify an object. Doing so, we can recognize every object (of course if it is mentioned in the OpenStreetMap), with its further information given by people, in any area of the world.
 
-### Contribution needed!
+### Contributions needed!
 
 As you can understand from the above explanation, the improvement potential of this project is non-ending, so feel free to fork it!
