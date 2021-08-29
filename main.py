@@ -1,6 +1,6 @@
 '''
 @author: Soroosh Tayebi Arasteh <soroosh.arasteh@fau.de>
-https://github.com/starasteh/
+https://github.com/tayebiarasteh/
 '''
 from OSMdata import OSMdata
 
